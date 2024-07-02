@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title> Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #0ceb56;
+            border: none;
+            border-radius: 15px;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 600px;
+        }
+        .quiz-box {
+            background-color: rgb(181, 188, 215);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .question {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .answers {
+            margin-left: 20px;
+        }
+        #submitQuiz {
+            display: block;
+            margin: 20px auto;
+            background-color: rgb(25, 21, 102);
+            width: 210px;
+            height: 65px;
+            color: white;
+            border-radius: 30px;
+            border: 2px solid #0a4f9e;
+            box-shadow: 8px 8px 8px rgb(122, 141, 219);
+            cursor: pointer;
+        }
+
+        #submitQuiz:hover {
+            background-color: #0a4f9e;
+            transform: translateY(-5px);
+            box-shadow: 5px 10px 10px rgb(128, 155, 219);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img style="border-radius: 50%;" src="./img/LOGOOO.png" alt="English School Logo" width="100" height="100">
+                <span class="logo-text"><strong> DATA STRUCTURES & ALGORITHMS</strong></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ms-auto">
+                <a class="nav-link active" id="t2" href="rrrrrr.html">GERİ DÖN</a>
+              </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="quiz-container">
+        <h2><strong>Gördüğünüz tüm videolara ve çözdüğünüz sorulara dayanarak bu sınavı yapınız</strong></h2>
+    </div>
+
+    <div class="quiz-box">
+        <form id="quizForm">
+            <!-- Questions and answers go here -->
+            <div class="question">
+                <strong>1. Bir binary tree'nin preorder dolaşım sırası aşağıdakilerden hangisidir?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q1" value="a" required> A) Sol -> Kök -> Sağ<br>
+                <input type="radio" name="q1" value="b"> B) Kök -> Sol -> Sağ<br>
+                <input type="radio" name="q1" value="c"> C) Sağ -> Kök -> Sol<br>
+            </div>
+
+            <div class="question">
+                <strong>2. Bir binary search tree'de (BST) maksimum elemanı bulmak için hangi işlem yapılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q2" value="a" required> A) Sol alt düğüme gitmek<br>
+                <input type="radio" name="q2" value="b"> B) Sağ alt düğüme gitmek<br>
+                <input type="radio" name="q2" value="c"> C) Kök düğüme gitmek<br>
+            </div>
+
+            <div class="question">
+                <strong>3. Aşağıdaki C++ fonksiyonu hangi dolaşım yöntemini gerçekleştirir?</strong>
+                <pre>
+void postorderTraversal(TreeNode* root) {
+    if (root == nullptr) return;
+    postorderTraversal(root->left);
+    postorderTraversal(root->right);
+    cout << root->data << " ";
+}
+                </pre>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q3" value="a" required> A) Preorder Dolaşım<br>
+                <input type="radio" name="q3" value="b"> B) Inorder Dolaşım<br>
+                <input type="radio" name="q3" value="c"> C) Postorder Dolaşım<br>
+            </div>
+
+            <div class="question">
+                <strong>4. Bir tek yönlü bağlı listeye bir eleman eklemek için hangi işlem kullanılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q4" value="a" required> A) insertEnd()<br>
+                <input type="radio" name="q4" value="b"> B) addNode()<br>
+                <input type="radio" name="q4" value="c"> C) append()<br>
+            </div>
+
+            <div class="question">
+                <strong>5. Bir tek yönlü bağlı listede, ikinci düğümü silmek için hangi işlem kullanılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q5" value="a" required> A) deleteSecond()<br>
+                <input type="radio" name="q5" value="b"> B) removeSecond()<br>
+                <input type="radio" name="q5" value="c"> C) removeNext(firstNode)<br>
+            </div>
+
+            <div class="question">
+                <strong>6. Bir tek yönlü bağlı listede, listenin ortasına erişmek için kaç adım gereklidir?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q6" value="a" required> A) O(1)<br>
+                <input type="radio" name="q6" value="b"> B) O(n)<br>
+                <input type="radio" name="q6" value="c"> C) O(log n)<br>
+            </div>
+
+            <div class="question">
+                <strong>7. Bir çift yönlü bağlı listede, üçüncü düğümü eklemek için hangi işlem kullanılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q7" value="a" required> A) insertThird()<br>
+                <input type="radio" name="q7" value="b"> B) addNode()<br>
+                <input type="radio" name="q7" value="c"> C) insertAt(3)<br>
+            </div>
+
+            <div class="question">
+                <strong>8. Bir çift yönlü bağlı listede, bir düğümü belirli bir konuma eklemek için hangi adımlar izlenir?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q8" value="a" required> A) Ekleme konumunu bul, yeni düğümü oluştur, bağla<br>
+                <input type="radio" name="q8" value="b"> B) Yeni düğümü oluştur, ekleme konumunu bul, bağla<br>
+                <input type="radio" name="q8" value="c"> C) Bağla, ekleme konumunu bul, yeni düğümü oluştur<br>
+            </div>
+
+            <div class="question">
+                <strong>9. Bir çift yönlü bağlı listede, bir düğümü silmek için hangi işlem kullanılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q9" value="a" required> A) deleteNode()<br>
+                <input type="radio" name="q9" value="b"> B) removeNode()<br>
+                <input type="radio" name="q9" value="c"> C) popNode()<br>
+            </div>
+
+            <div class="question">
+                <strong>10. Aşağıdaki dizinin Selection Sort ile sıralanmasının ilk adımı nedir?</strong>
+                <pre>Dizi: [23, 10, 15, 34, 12]</pre>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q10" value="a" required> A) 10, 23, 15, 34, 12<br>
+                <input type="radio" name="q10" value="b"> B) 23, 12, 15, 34, 10<br>
+                <input type="radio" name="q10" value="c"> C) 10, 15, 23, 34, 12<br>
+            </div>
+
+            <div class="question">
+                <strong>11. Selection Sort algoritmasının en iyi durum zaman karmaşıklığı nedir?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q11" value="a" required> A) O(n log n)<br>
+                <input type="radio" name="q11" value="b"> B) O(n)<br>
+                <input type="radio" name="q11" value="c"> C) O(n^2)<br>
+            </div>
+
+            <div class="question">
+                <strong>12. Bubble Sort algoritması hangi durumda en kötü performansı gösterir?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q12" value="a" required> A) Dizi tamamen rastgele olduğunda<br>
+                <input type="radio" name="q12" value="b"> B) Dizi zaten sıralı olduğunda<br>
+                <input type="radio" name="q12" value="c"> C) Dizi ters sıralı olduğunda<br>
+            </div>
+
+            <div class="question">
+                <strong>13. Bubble Sort algoritmasında her geçişte kaç adet karşılaştırma yapılır?</strong>
+                <pre>Dizi: [4, 3, 2, 1]</pre>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q13" value="a" required> A) 6<br>
+                <input type="radio" name="q13" value="b"> B) 10<br>
+                <input type="radio" name="q13" value="c"> C) 15<br>
+            </div>
+
+            <div class="question">
+                <strong>14. Insertion Sort algoritması nasıl çalışır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q14" value="a" required> A) Elemanları karşılaştırır ve yer değiştirir<br>
+                <input type="radio" name="q14" value="b"> B) Her elemanı uygun konumuna yerleştirir<br>
+                <input type="radio" name="q14" value="c"> C) Elemanları yerleştirir ve karşılaştırır<br>
+            </div>
+
+            <div class="question">
+                <strong>15. Insertion Sort algoritmasının en kötü durum zaman karmaşıklığı nedir?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q15" value="a" required> A) O(n log n)<br>
+                <input type="radio" name="q15" value="b"> B) O(n)<br>
+                <input type="radio" name="q15" value="c"> C) O(n^2)<br>
+            </div>
+
+            <div class="question">
+                <strong>16. Quick Sort algoritmasında pivot seçimi nasıl yapılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q16" value="a" required> A) İlk eleman olarak seçilir<br>
+                <input type="radio" name="q16" value="b"> B) Son eleman olarak seçilir<br>
+                <input type="radio" name="q16" value="c"> C) Rastgele bir eleman olarak seçilir<br>
+            </div>
+
+            <div class="question">
+                <strong>17. Quick Sort algoritmasının ortalama zaman karmaşıklığı nedir?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q17" value="a" required> A) O(n log n)<br>
+                <input type="radio" name="q17" value="b"> B) O(n)<br>
+                <input type="radio" name="q17" value="c"> C) O(n^2)<br>
+            </div>
+
+            <div class="question">
+                <strong>18. Kuyruk (queue) veri yapısında eleman eklemek için hangi işlem kullanılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q18" value="a" required> A) push()<br>
+                <input type="radio" name="q18" value="b"> B) enqueue()<br>
+                <input type="radio" name="q18" value="c"> C) insert()<br>
+            </div>
+
+            <div class="question">
+                <strong>19. Kuyruk (queue) veri yapısında eleman çıkarmak için hangi işlem kullanılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q19" value="a" required> A) pop()<br>
+                <input type="radio" name="q19" value="b"> B) dequeue()<br>
+                <input type="radio" name="q19" value="c"> C) remove()<br>
+            </div>
+
+            <div class="question">
+                <strong>20. Stack veri yapısında elemanları eklemek için hangi işlem kullanılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q20" value="a" required> A) push()<br>
+                <input type="radio" name="q20" value="b"> B) enqueue()<br>
+                <input type="radio" name="q20" value="c"> C) insert()<br>
+            </div>
+
+            <div class="question">
+                <strong>21. Stack veri yapısında elemanları çıkarmak için hangi işlem kullanılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q21" value="a" required> A) pop()<br>
+                <input type="radio" name="q21" value="b"> B) dequeue()<br>
+                <input type="radio" name="q21" value="c"> C) remove()<br>
+            </div>
+
+            <div class="question">
+                <strong>22. Stack veri yapısının çalışma prensibi nedir?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q22" value="a" required> A) FIFO (First In, First Out)<br>
+                <input type="radio" name="q22" value="b"> B) LIFO (Last In, First Out)<br>
+                <input type="radio" name="q22" value="c"> C) FILO (First In, Last Out)<br>
+            </div>
+
+            <div class="question">
+                <strong>23. Aşağıdaki C++ kodu hangi veri yapısını kullanmaktadır?</strong>
+                <pre>
+void enqueue(int x) {
+    queue[++rear] = x;
+}
+                </pre>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q23" value="a" required> A) Queue<br>
+                <input type="radio" name="q23" value="b"> B) Stack<br>
+                <input type="radio" name="q23" value="c"> C) Linked List<br>
+            </div>
+
+            <div class="question">
+                <strong>24. Aşağıdaki dizinin Merge Sort ile sıralanmasının ikinci adımı nedir?</strong>
+                <pre>Dizi: [12, 11, 13, 5, 6, 7]</pre>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q24" value="a" required> A) 11, 12, 13, 5, 6, 7<br>
+                <input type="radio" name="q24" value="b"> B) 5, 6, 7, 11, 12, 13<br>
+                <input type="radio" name="q24" value="c"> C) 12, 11, 13, 5, 6, 7<br>
+            </div>
+
+            <div class="question">
+                <strong>25. Binary Search algoritmasının zaman karmaşıklığı nedir?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q25" value="a" required> A) O(n)<br>
+                <input type="radio" name="q25" value="b"> B) O(log n)<br>
+                <input type="radio" name="q25" value="c"> C) O(n^2)<br>
+            </div>
+
+            <div class="question">
+                <strong>26. Merge Sort algoritmasının zaman karmaşıklığı nedir?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q26" value="a" required> A) O(n)<br>
+                <input type="radio" name="q26" value="b"> B) O(log n)<br>
+                <input type="radio" name="q26" value="c"> C) O(n log n)<br>
+            </div>
+
+            <div class="question">
+                <strong>27. Quick Sort algoritmasının en kötü durum zaman karmaşıklığı nedir?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q27" value="a" required> A) O(n log n)<br>
+                <input type="radio" name="q27" value="b"> B) O(n^2)<br>
+                <input type="radio" name="q27" value="c"> C) O(n)<br>
+            </div>
+
+            <div class="question">
+                <strong>28. Kuyruk veri yapısında eleman eklemek için hangi işlem kullanılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q28" value="a" required> A) push()<br>
+                <input type="radio" name="q28" value="b"> B) enqueue()<br>
+                <input type="radio" name="q28" value="c"> C) insert()<br>
+            </div>
+
+            <div class="question">
+                <strong>29. Kuyruk veri yapısında eleman çıkarmak için hangi işlem kullanılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q29" value="a" required> A) pop()<br>
+                <input type="radio" name="q29" value="b"> B) dequeue()<br>
+                <input type="radio" name="q29" value="c"> C) remove()<br>
+            </div>
+
+            <div class="question">
+                <strong>30. Stack veri yapısında elemanları eklemek için hangi işlem kullanılır?</strong>
+            </div>
+            <div class="answers">
+                <input type="radio" name="q30" value="a" required> A) push()<br>
+                <input type="radio" name="q30" value="b"> B) enqueue()<br>
+                <input type="radio" name="q30" value="c"> C) insert()<br>
+            </div>
+
+            <button type="submit" id="submitQuiz">Submit Quiz</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function (event) {
+            event.preventDefault();        // Define correct answers
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'c',
+                q4: 'a',
+                q5: 'a',
+                q6: 'b',
+                q7: 'c',
+                q8: 'a',
+                q9: 'a',
+                q10: 'a',
+                q11: 'b',
+                q12: 'c',
+                q13: 'b',
+                q14: 'b',
+                q15: 'c',
+                q16: 'c',
+                q17: 'a',
+                q18: 'b',
+                q19: 'a',
+                q20: 'b',
+                q21: 'a',
+                q22: 'b',
+                q23: 'a',
+                q24: 'a',
+                q25: 'b',
+                q26: 'c',
+                q27: 'b',
+                q28: 'b',
+                q29: 'b',
+                q30: 'a'
+            };
+
+            // Initialize score
+            let score = 0;
+            let incorrectAnswers = [];
+
+            // Check each question's answer
+            for (let i = 1; i <= Object.keys(correctAnswers).length; i++) {
+                const questionId = 'q' + i;
+                const selectedAnswer = document.querySelector(`input[name="${questionId}"]:checked`);
+
+                if (selectedAnswer) {
+                    // Check if the selected answer is correct
+                    if (selectedAnswer.value === correctAnswers[questionId]) {
+                        score += 10;
+                    } else {
+                        // Track incorrect answers
+                        incorrectAnswers.push({
+                            question: questionId,
+                            correctAnswer: correctAnswers[questionId],
+                            userAnswer: selectedAnswer.value,
+                        });
+                    }
+                }
+            }
+
+            // Redirect to the results page
+            window.location.href = `c1.html?score=${score}&incorrectAnswers=${JSON.stringify(incorrectAnswers)}`;
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

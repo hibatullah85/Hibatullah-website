@@ -1,0 +1,111 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz Results</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .result-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .result-box {
+            background-color: rgb(181, 188, 215);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+            width: 100%;
+        }
+        .score-box {
+            background-color: rgb(181, 188, 215);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        .incorrect {
+            color: rgb(224, 232, 233);
+        }
+        .correct {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h2>Quiz Sonuçları</h2>
+        <div class="score-box">
+            <h3>Puan: <span id="score"></span></h3>
+            <h3>Sonuç: <span id="result"></span></h3>
+        </div>
+        <h3>Doğru Cevap Sayısı: <span id="correctAnswersCount"></span></h3>
+        <h3>Yanlış Cevap Sayısı: <span id="incorrectAnswersCount"></span></h3>
+        <div class="result-box">
+            <h4>Yanlış Cevaplar</h4>
+            <div id="incorrectAnswersList"></div>
+        </div>
+        <a href="index.html">Tekrar Deneyin    </a>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            const score = parseInt(params.get('score'), 10);
+            const incorrectAnswers = JSON.parse(params.get('incorrectAnswers'));
+            return { score, incorrectAnswers };
+        }
+
+        function displayResults() {
+            const { score, incorrectAnswers } = getQueryParams();
+            const totalQuestions = 30;
+            const correctAnswersCount = score / 2;
+            const incorrectAnswersCount = totalQuestions - correctAnswersCount;
+
+            let resultText = '';
+            if (score < 20) {
+                resultText = 'Zayıf';
+            } else if (score < 30) {
+                resultText = 'Orta';
+            } else if (score < 40) {
+                resultText = 'İyi';
+            } else if (score < 50) {
+                resultText = 'Çok İyi';
+            } else {
+                resultText = 'Mükemmel';
+            }
+
+            document.getElementById('score').innerText = score;
+            document.getElementById('correctAnswersCount').innerText = correctAnswersCount;
+            document.getElementById('incorrectAnswersCount').innerText = incorrectAnswersCount;
+            document.getElementById('result').innerText = resultText;
+
+            const incorrectAnswersList = document.getElementById('incorrectAnswersList');
+            incorrectAnswers.forEach(answer => {
+                const answerElement = document.createElement('div');
+                answerElement.classList.add('incorrect');
+                answerElement.innerHTML = `
+                    Soru: ${answer.question} <br>
+                    Verilen Cevap: ${answer.userAnswer} <br>
+                    Doğru Cevap: ${answer.correctAnswer} <br>
+                    <a href="B23.html">soruya geri dön</a>
+                `;
+                incorrectAnswersList.appendChild(answerElement);
+            });
+        }
+
+        window.onload = displayResults;
+    </script>
+</body>
+</html>

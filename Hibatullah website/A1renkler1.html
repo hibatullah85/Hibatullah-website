@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #0ceb56;
+            border: none;
+            border-radius: 15px;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 600px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .question-box {
+            background-color: rgb(181, 188, 215);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        #submi {
+            display: block;
+            margin: 20px auto;
+            background-color: rgb(25, 21, 102);
+            width: 210px;
+            height: 65px;
+            color: white;
+            border-radius: 30px;
+            border: 2px solid #0a4f9e;
+            box-shadow: 8px 8px 8px rgb(122, 141, 219);
+            cursor: pointer;
+        }
+        #submi:hover {
+            background-color: #0a4f9e;
+            transform: translateY(-5px);
+            box-shadow: 5px 10px 10px rgb(128, 155, 219);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img style="border-radius: 50%;" src="./img/LOGOOO.png" alt="English School Logo" width="100" height="100">
+                <span class="logo-text"><strong> DATA STRUCTURES & ALGORITHMS</strong></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ms-auto">
+                <a class="nav-link active" id="t2" href="SECME1.HTML">GERİ DÖN</a>
+              </div>
+            </div>
+        </div>
+    </nav>
+    
+    <h5><strong>Videoyu izledikten sonra bilgilerinizi test etmek için aşağıdaki soruları yanıtlayın.</strong></h5>
+    <iframe width="500" height="500" src="https://www.youtube.com/embed/TwH3pWe5OQ8" frameborder="0" allowfullscreen></iframe>
+      
+    <div class="quiz-container">
+        <h2><strong> Infix_Postfix</strong></h2>
+    </div>
+  
+    <form id="quizForm">
+        <div class="question-box">
+            <label for="q1"><strong>1. Aşağıdaki infix ifadeyi postfix ifadeye dönüştürün:</strong><br> Infix: A + (B * C)</label>
+            <input type="radio" name="q1" value="b" required> b) A B C * +<br>
+            <input type="radio" name="q1" value="a"> a) A + B * C<br>
+            <input type="radio" name="q1" value="c"> c) A B + C *<br>        
+            
+            <label for="q2"><strong>2. Verilen infix ifadeyi postfix ifadeye dönüştürün:</strong><br> Infix: (A + B) * (C - D)</label>
+            <input type="radio" name="q2" value="a" required> a) A B + C D - *<br>
+            <input type="radio" name="q2" value="b"> b) A B C D - * +<br>
+            <input type="radio" name="q2" value="c"> c) A B + C - D *<br>
+
+            <label for="q3"><strong>3. Aşağıdaki infix ifadeyi postfix ifadeye dönüştürün:</strong><br> Infix: (A + B) * C - (D - E) / (F + G)</label>
+            <input type="radio" name="q3" value="b" required> b) A B + C * D E - G F + /<br>
+            <input type="radio" name="q3" value="a"> a) A B + C * D E - F G + /<br>
+            <input type="radio" name="q3" value="c"> c) A B + C * D E - G F - /<br>
+
+            <label for="q4"><strong>4. Verilen infix ifadeyi postfix ifadeye dönüştürün:</strong><br> Infix: A * B + C / D</label>
+            <input type="radio" name="q4" value="b" required> b) A B * C + D /<br>
+            <input type="radio" name="q4" value="a"> a) A B * C D / +<br>
+            <input type="radio" name="q4" value="c"> c) A B C * D / +<br>
+
+            <label for="q5"><strong>5. Aşağıdaki infix ifadeyi postfix ifadeye dönüştürün:</strong><br> Infix: A * (B + C) - D / E</label>
+            <input type="radio" name="q5" value="b" required> b) A B C + * D E - /<br>
+            <input type="radio" name="q5" value="c"> c) A B C + * D / E -<br>
+            <input type="radio" name="q5" value="a"> a) A B C + * D E / -<br>
+
+            <label for="q6"><strong>6. Verilen infix ifadeyi postfix ifadeye dönüştürün:</strong><br> Infix: (A + B) * (C - D) / E</label>
+            <input type="radio" name="q6" value="a" required> a) A B + C D - * E /<br>
+            <input type="radio" name="q6" value="b"> b) A B + C D - E /<br>
+            <input type="radio" name="q6" value="c"> c) A B + C D - * E<br>
+
+            <label for="q7"><strong>7. Aşağıdaki infix ifadeyi postfix ifadeye dönüştürün:</strong><br> Infix: A * B + C * D - E</label>
+            <input type="radio" name="q7" value="a" required> a) A B * C D * + E -<br>
+            <input type="radio" name="q7" value="c"> c) A B * C D + * E -<br>
+            <input type="radio" name="q7" value="b"> b) A B C * D * + E -<br>
+
+            <label for="q8"><strong>8. Verilen infix ifadeyi postfix ifadeye dönüştürün:</strong><br> Infix: A * (B - C) + D * E</label>
+            <input type="radio" name="q8" value="c" required> c) A B C - * D E * +<br>
+            <input type="radio" name="q8" value="a"> a) A B C - * D E +<br>
+            <input type="radio" name="q8" value="b"> b) A B C - * D E *<br>
+
+            <label for="q9"><strong>9. Aşağıdaki infix ifadeyi postfix ifadeye dönüştürün:</strong><br> Infix: (A + B) * C - D * (E + F)</label>
+            <input type="radio" name="q9" value="a" required> a) A B + C * D E F + * -<br>
+            <input type="radio" name="q9" value="b"> b) A B + C * D E F + -<br>
+            <input type="radio" name="q9" value="c"> c) A B + C * D * E F + -<br>
+
+            <label for="q10"><strong>10. Verilen infix ifadeyi postfix ifadeye dönüştürün:</strong><br> Infix: (A * B) + (C * D) - E / (F + G)</label>
+            <input type="radio" name="q10" value="a" required> a) A B * C D * + E F G + / -<br>
+            <input type="radio" name="q10" value="b"> b) A B * C D * + E / F G + -<br>
+            <input type="radio" name="q10" value="c"> c) A B * C D * + E F G + -<br>
+        </div>
+        <input id="submi" type="submit" value="Cevapları Sağlayın">
+    </form>
+    
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+    
+            // Doğru cevapları tanımla
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'a',
+                q3: 'a',
+                q4: 'a',
+                q5: 'a',
+                q6: 'a',
+                q7: 'a',
+                q8: 'c',
+                q9: 'a',
+                q10: 'a'
+            };
+    
+            // Puanı başlat
+            let correctCount = 0;
+            let incorrectCount = 0;
+            let incorrectQuestions = [];
+    
+            // Her sorunun cevabını kontrol et
+            for (let i = 1; i <= Object.keys(correctAnswers).length; i++) {
+                const questionId = 'q' + i;
+                const selectedAnswer = document.querySelector(`input[name="${questionId}"]:checked`);
+    
+                if (selectedAnswer) {
+                    // Seçilen cevabın doğru olup olmadığını kontrol et
+                    if (selectedAnswer.value === correctAnswers[questionId]) {
+                        correctCount++;
+                    } else {
+                        incorrectCount++;
+                        incorrectQuestions.push(questionId);
+                    }
+                }
+            }
+    
+            // Sonuçları local storage'a kaydet
+            localStorage.setItem('correctCount', correctCount);
+            localStorage.setItem('incorrectCount', incorrectCount);
+            localStorage.setItem('incorrectQuestions', JSON.stringify(incorrectQuestions));
+    
+            // Sonuç sayfasına yönlendir
+            window.location.href = 'result4.html';
+        });
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #0ceb56;
+            border: none;
+            border-radius: 15px;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 600px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .question-box {
+            background-color: rgb(181, 188, 215);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        #submi {
+            display: block;
+            margin: 20px auto;
+            background-color: rgb(105, 99, 220);
+            width: 210px;
+            height: 65px;
+            color: white;
+            border-radius: 30px;
+            border: 2px solid #0a4f9e;
+            box-shadow: 8px 8px 8px rgb(122, 141, 219);
+            cursor: pointer;
+        }
+
+        #submi:hover {
+            background-color: #0a4f9e;
+            transform: translateY(-5px);
+            box-shadow: 5px 10px 10px rgb(128, 155, 219);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img style="border-radius: 50%;" src="./img/LOGOOO.png" alt="English School Logo" width="100" height="100">
+                <span class="logo-text"><strong> DATA STRUCTURES & ALGORITHMS</strong></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ms-auto">
+                <a class="nav-link active" id="t2" href="SECIM3.html">GERİ DÖN</a>
+              </div>
+            </div>
+        </div>
+    </nav>
+    
+    <h5><strong>Videoyu izledikten sonra bilgilerinizi test etmek için aşağıdaki soruları yanıtlayın.</strong></h5>
+    <iframe width="500" height="500" src="https://www.youtube.com/embed/j9egu_VB1j4?si=0NykaeFXZuXpf25e" frameborder="0" allowfullscreen></iframe>
+      
+    <div class="quiz-container">
+        <h2><strong>Ağaçlarda Dolaşım Soruları :</strong></h2>
+    </div>
+  
+    <form id="quizForm">
+        <div class="question-box">
+            <label for="q1"><strong>1. Bir ağacın Inorder dolaşım sonucu (Sol-Kök-Sağ) aşağıdaki dizilerden hangisidir?<br>
+            Ağaç:<br>
+                       10<br>
+                      /  \<br>
+                     5   15<br>
+                    / \   / \<br>
+                   2   7 12 20<br>
+            </strong></label>
+            <input type="radio" name="q1" value="a" required> a) 2, 5, 7, 10, 12, 15, 20<br>
+            <input type="radio" name="q1" value="b"> b) 10, 5, 2, 7, 15, 12, 20<br>
+            <input type="radio" name="q1" value="c"> c) 1, 5, 7, 10, 12, 15, 20<br>
+
+            <label for="q2"><strong>2. Bir ağacın Inorder dolaşım sonucu 1, 2, 3, 4, 5, 6, 7 olarak verildiğinde, bu ağacın Preorder dolaşım sonucu aşağıdakilerden hangisi olabilir?</strong></label>
+            <input type="radio" name="q2" value="a" required> a) 4, 2, 1, 3, 6, 5, 7<br>
+            <input type="radio" name="q2" value="b"> b) 1, 2, 3, 4, 5, 6, 7<br>
+            <input type="radio" name="q2" value="c"> c) 7, 6, 5, 4, 3, 2, 1<br>
+
+            <label for="q3"><strong>3. Aşağıdaki C++ fonksiyonu hangi dolaşım yöntemini gerçekleştirir?</strong><br>
+            <pre>
+            <code>
+            void inorderTraversal(TreeNode* root) {
+                if (root == nullptr) return;
+                inorderTraversal(root->left);
+                cout << root->data << " ";
+                inorderTraversal(root->right);
+            }
+            </code>
+            </pre></label>
+            <input type="radio" name="q3" value="a" required> a) Inorder Dolaşım<br>
+            <input type="radio" name="q3" value="b"> b) Preorder Dolaşım<br>
+            <input type="radio" name="q3" value="c"> c) Postorder Dolaşım<br>
+
+            <label for="q4"><strong>4. Bir ağacın Inorder dolaşım sonucu (Sol-Kök-Sağ) 4, 2, 5, 1, 6, 3, 7 olarak verildiğinde, bu ağacın Postorder dolaşım sonucu aşağıdakilerden hangisi olabilir?</strong></label>
+            <input type="radio" name="q4" value="a" required> a) 4, 5, 2, 6, 7, 3, 1<br>
+            <input type="radio" name="q4" value="b"> b) 7, 6, 3, 5, 4, 2, 1<br>
+            <input type="radio" name="q4" value="c"> c) 1, 2, 4, 5, 3, 6, 7<br>
+
+            <label for="q5"><strong>5. Verilen bir ağacın Postorder dolaşım sonucu 1, 3, 2, 5, 7, 6, 4 olarak verildiğinde, bu ağacın Inorder dolaşım sonucu aşağıdakilerden hangisi olabilir?</strong></label>
+            <input type="radio" name="q5" value="a" required> a) 1, 2, 3, 4, 5, 6, 7<br>
+            <input type="radio" name="q5" value="b"> b) 2, 1, 3, 4, 6, 5, 7<br>
+            <input type="radio" name="q5" value="c"> c) 4, 2, 1, 3, 5, 6, 7<br>
+
+            <label for="q6"><strong>6. Aşağıdaki C++ fonksiyonu hangi dolaşım yöntemini gerçekleştirir?</strong><br>
+            <pre>
+            <code>
+            void preorderTraversal(TreeNode* root) {
+                if (root == nullptr) return;
+                cout << root->data << " ";
+                preorderTraversal(root->left);
+                preorderTraversal(root->right);
+            }
+            </code>
+            </pre></label>
+            <input type="radio" name="q6" value="a" required> a) Inorder Dolaşım<br>
+            <input type="radio" name="q6"value="b"> b) Preorder Dolaşım<br>
+            <input type="radio" name="q6" value="c"> c) Postorder Dolaşım<br>
+            
+            <label for="q7"><strong>7. Bir ağacın Inorder dolaşım sonucu 3, 2, 4 ve Preorder dolaşım sonucu 2, 3, 4 olduğunda, bu ağacın Postorder dolaşım sonucu aşağıdakilerden hangisi olabilir?</strong></label>
+            <input type="radio" name="q7" value="a" required> a) 3, 4, 2<br>
+            <input type="radio" name="q7" value="b"> b) 4, 3, 2<br>
+            <input type="radio" name="q7" value="c"> c) 2, 3, 4<br>
+    
+            <label for="q8"><strong>8. Bir ağacın Preorder dolaşım sonucu 10, 5, 2, 7, 15, 12, 17 olarak verildiğinde, bu ağacın Inorder dolaşım sonucu aşağıdakilerden hangisi olabilir?</strong></label>
+            <input type="radio" name="q8" value="a" required> a) 2, 5, 7, 10, 12, 15, 17<br>
+            <input type="radio" name="q8" value="b"> b) 10, 5, 2, 7, 15, 12, 17<br>
+            <input type="radio" name="q8" value="c"> c) 2, 7, 5, 12, 10, 17, 15<br>
+    
+            <label for="q9"><strong>9. Verilen bir ağacın Inorder dolaşım sonucu 2, 1, 3 ve Postorder dolaşım sonucu 2, 3, 1 olduğunda, bu ağacın Preorder dolaşım sonucu aşağıdakilerden hangisi olabilir?</strong></label>
+            <input type="radio" name="q9" value="a" required> a) 1, 2, 3<br>
+            <input type="radio" name="q9" value="b"> b) 2, 1, 3<br>
+            <input type="radio" name="q9" value="c"> c) 3, 2, 1<br>
+    
+            <label for="q10"><strong>10. Bir ağacın Preorder dolaşım sonucu 10, 5, 1, 7, 15, 12, 20 ve Postorder dolaşım sonucu 1, 7, 5, 12, 20, 15, 10 olduğunda, bu ağacın Inorder dolaşım sonucu aşağıdakilerden hangisi olabilir?</strong></label>
+            <input type="radio" name="q10" value="a" required> a) 1, 5, 7, 10, 12, 15, 20<br>
+            <input type="radio" name="q10" value="b"> b) 10, 5, 1, 7, 15, 12, 20<br>
+            <input type="radio" name="q10" value="c"> c) 1, 7, 5, 12, 10, 20, 15<br>
+        </div>
+        
+        <button type="submit" id="submi"><strong>Bitir ve Gönder</strong></button>
+    </form>
+    
+    <script>
+        document.getElementById("quizForm").addEventListener("submit", function(event){
+            event.preventDefault();
+            var correctAnswers = {
+                q1: "a",
+                q2: "a",
+                q3: "a",
+                q4: "a",
+                q5: "b",
+                q6: "b",
+                q7: "a",
+                q8: "a",
+                q9: "a",
+                q10: "a",
+            };
+    
+            var score = 0;
+            var incorrectAnswers = [];
+            var data = new FormData(event.target);
+            for (var [key, value] of data.entries()) {
+                if (correctAnswers[key] === value) {
+                    score++;
+                } else {
+                    incorrectAnswers.push({
+                        question: key,
+                        correctAnswer: correctAnswers[key],
+                        userAnswer: value,
+                    });
+                }
+            }
+
+            // Redirect to the results page
+            window.location.href = `result12.html?score=${score}&incorrectAnswers=${JSON.stringify(incorrectAnswers)}`;
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

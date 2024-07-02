@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz Results</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .results-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .incorrect-question {
+            margin-top: 20px;
+        }
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #0a4f9e;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h1>Quiz Results</h1>
+        <p>Doğru cevap sayısı: <span id="correctCount"></span></p>
+        <p>Yanlış cevap sayısı: <span id="incorrectCount"></span></p>
+
+        <div id="incorrectQuestionsContainer"></div>
+
+        <button class="back-button" onclick="window.location.href='index.html'">Ana Sayfaya Dön</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const correctCount = localStorage.getItem('correctCount');
+            const incorrectCount = localStorage.getItem('incorrectCount');
+            const incorrectQuestions = JSON.parse(localStorage.getItem('incorrectQuestions'));
+
+            document.getElementById('correctCount').textContent = correctCount;
+            document.getElementById('incorrectCount').textContent = incorrectCount;
+
+            const incorrectQuestionsContainer = document.getElementById('incorrectQuestionsContainer');
+            incorrectQuestions.forEach(questionId => {
+                const questionElement = document.createElement('div');
+                questionElement.className = 'incorrect-question';
+                questionElement.innerHTML = `
+                    <p>Soru ${questionId.replace('q', '')} yanlış.</p>
+                    <button onclick="retryQuestion('${questionId}')">Soruya geri dön</button>
+                `;
+                incorrectQuestionsContainer.appendChild(questionElement);
+            });
+        });
+
+        function retryQuestion(questionId) {
+            localStorage.setItem('retryQuestion', questionId);
+            window.location.href = ' A21.html';
+        }
+    </script>
+</body>
+</html>
